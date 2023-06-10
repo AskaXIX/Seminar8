@@ -14,31 +14,31 @@ int j = 0;
 
 while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
 {
-  sqareMatrix[i, j] = temp;
-  temp++;
-  if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
-    j++;
-  else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
-    i++;
-  else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
-    j--;
-  else
-    i--;
+    sqareMatrix[i, j] = temp;
+    temp++;
+    if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+        j++;
+    else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+        i++;
+    else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+        j--;
+    else
+        i--;
 }
 
 PrintArray(sqareMatrix);
 
-void PrintArray (int[,] array)
+void PrintArray(int[,] array)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      if (array[i,j] / 10 <= 0)
-      System.Console.Write($" {array[i,j]} ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] / 10 <= 0)
+                System.Console.Write($" {array[i, j]} ");
 
-      else System.Console.Write($"{array[i,j]} ");
+            else System.Console.Write($"{array[i, j]} ");
+        }
+        System.Console.WriteLine();
     }
-    System.Console.WriteLine();
-  }
 }
